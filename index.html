@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>YouAchieve!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!--Chart API-->
+	
+			        	 <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'A-G Requirements');
+        data.addColumn('number', 'Completed');
+        data.addRows([
+          ['Complete', 3],
+          ['Incomplete', 1]
+        ]);
+
+        // Set chart options
+        var options = {'title':'A-G Requirements',
+                       'width':400,
+                       'height':350, 'backgroundColor':"#272b30", 'colors':["#56bc88","#e9633b"],
+                       'color':"#FFFFFF", titleTextStyle: {color: 'white'}, legend: {textStyle: {color: 'white'}}};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+    
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Standardized Tests');
+        data.addColumn('number', 'Completed');
+        data.addRows([
+          ['Complete', 2],
+          ['Incomplete', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title':'Standardized Tests',
+                       'width':400,
+                       'height':350, 'backgroundColor':"#272b30", 'colors':["#56bc88","#e9633b"],
+                       'color':"#FFFFFF", titleTextStyle: {color: 'white'}, legend: {textStyle: {color: 'white'}}};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_test_div'));
+        chart.draw(data, options);
+      }
+    </script>
+    
+    <!-- end chart -->
+
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/self.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+      	
+        padding-top: 80px;
+        padding-bottom: 40px;
+      }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">YouAchieve!</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav pull-right">
+              <li class="active"><a href="#">Student Name</a></li>
+              <li><a href="#about">Switch Student</a></li>
+              
+            </ul>
+            
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+	
+    <div class="container">
+    
+    	<!--Upcoming Task sidebar!-->
+		<div id="side_pannel" class="span3">
+			<ul id="upcoming-task">
+				
+				<!--<li class="deadline-date-header">Nov 29 <div id="count-down">19<span>days</span></div></li>
+				<li class="deadline-date-content">SAT</li>
+
+
+				<li class="deadline-date-header">Dec 30 <div id="count-down">49<span>days</span></span></div></li>
+				<li class="deadline-date-content">SAT</li>
+				<li class="deadline-date-content">USC</li>
+
+		
+	
+
+				<li class="deadline-date-header">April 3 <div id="count-down">100<span>days</span></div></li>
+				<li class="deadline-date-content">A-G Requirement</li>
+		
+				!-->
+ 			</ul>
+			
+		</div>
+      	
+      	<div id="main_pannel" class="row">
+			<div class="subnav span9 offset3" >
+				<ul id="main_pannel_nav" class="nav tabs nav-pills" > 
+					<li class="active"><a href="#overview">Overview</a></li>
+					<li class=""><a href="#colleges">Colleges</a></li>
+					<li class=""><a href="#tests">Tests</a></li>
+					<li class=""><a href="#other">Other</a></li>
+					<li class=""><a href="#profile">Profile</a></li>
+				</ul>
+			</div>
+			<div id="TabContent">
+				<div id="overview" class="tab-pane active">
+                	<div class="span9 offset3">
+			        	<h2>Overview</h2>
+		
+	
+    						<table>
+    						<tr>
+    						<td>
+    						<div id="chart_div" style="margin:auto"></div>
+    						</td>
+    						<td>
+    						<div id="chart_test_div" style="margin:auto"></div>
+    						</td>
+    						</tr>
+    						</table>
+    
+
+			 		</div>
+             	</div>
+				<div id="colleges" class="tab-pane">
+                	<div class="span8 offset3">
+			
+			          <table id="colleges" style="background-color:transparent" width="100%" border="0">
+      				<tr>
+      				<td style="width:50%; text-align:left">
+      				<h2>Add Colleges</h2>
+      				<hr>
+      				</td>
+      				<td style="width:50%; text-align:left">
+      				<h2>Current Colleges</h2>
+      				<hr>
+      				</td>
+      				</tr>
+      				
+      				<tr> 
+      					<td id="collegecolumn" style="width:50%; text-align:center">
+      						
+      							<form class="form-search">
+								  <div class="input-append">
+   									 <input type="text" id="collegefilter" class="span2 search-query">
+ 									   <button type="submit" class="btn" id="collegesearch">Search</button>
+ 								 </div>
+								</form>
+								<div style="text-align:center">
+								<select id="addcolleges" class="span3" size="20" style="width:90%">
+								</select>
+								</div>
+							
+  							  
+								
+      	
+      					</td>
+      					<td id="collegecolumn" style="width:50%; text-align:center">
+      							
+      						
+      						<div style="margin:auto">
+								<select id="personalcolleges" size="23" style="width:90%">
+								</select>
+								</div>
+      						
+      						
+      						
+      					</td>
+      				</tr>
+      				<tr>
+      				<td>
+      				<div style="text-align:center">
+      								<a id="addCollege" class="btn" href="#">Add</a>
+      							</div>
+      				</td>
+      				<td>
+      				<div style="text-align:center">
+      								<a class="btn" href="#">Remove</a>
+      							</div>
+      				</td>
+      			</table>
+			  
+			        </div>
+             	</div>
+             	<div id="tests" class="tab-pane">
+                	<div class="span8 offset3">
+			          <h2>SAT I</h2>
+			          <hr>
+			  		  <div>
+			  		  	<table id="sat1_content" class='span7 table'>
+			  		  		<thead><tr><th>Math</th><th>Reading</th><th>Writing</th></tr></thead>
+			  		  		
+			  		  		<tbody>
+			  		  			
+			  		  		</tbody>
+			  		  	</table>
+			  		  	<h2>SAT II</h2>
+			          <hr>
+			  		  	<table id="sat2_content" class='span7 table'>
+			  		  		<thead><tr><th>Subject</th><th>Score</th></tr></thead>
+			  		  		
+			  		  		<tbody>
+			  		  			
+			  		  		</tbody>
+			  		  	</table>
+			  		  
+			  		  </div>
+			        </div>
+             	</div>
+             	<div id="other" class="tab-pane">
+             		
+                	<div class="span9 offset3">
+			        	<h2>A-G Requirement</h2>
+			        	<hr>
+			  			<ul class="requirement_table" id="english_requirement">
+			  		
+			                <li class="table_head">English</li>
+			               <span>
+			  				<li class="fullfilled">English 1</li>
+			  				<li>English 2</li>
+			  				<li>English 3</li>
+							<li>English 4</li>
+						   </span>
+  						</ul>
+  						<ul class="requirement_table" id="math_requirement">
+			  		
+			                <li class="table_head">Math</li>
+			               <span>
+			  				<li>Algebra II</li>
+			  				<li>Geometry</li>
+			  				<li>Year 1</li>
+							<li>Year 2</li>
+							<li>Year 3</li>
+						   </span>
+  						</ul>
+  						<ul class="requirement_table" id="science_requirement">
+			  		
+			                <li class="table_head">Science</li>
+			               <span>
+			  				<li>Year 1</li>
+			  				<li>Year 2</li>
+			  				<li>Year 3</li>
+						   </span>
+  						</ul>
+  						<div style="clear:both"></div>
+  						<hr>
+  						<ul class="requirement_table" id="social_requirement">
+			  		
+			                <li class="table_head">Social Studies</li>
+			               <span>
+			  				<li>US History/ Govt</li>
+							<li>World History</li>
+						   </span>
+  						</ul>
+  					
+  						<ul class="requirement_table" id="other_requirement">
+			  		
+			                <li class="table_head">Other</li>
+			               <span>
+			  				<li>Foreign Lang 1</li>
+			  				<li>Foreign Lang 2</li>
+			  				<li>Foreign Lang 3</li>
+							<li>Visual & Performance Art</li>
+							<li>Elective</li>
+						   </span>
+  						</ul>
+  						
+			        </div>
+			        
+             	</div>
+             	<div id="profile" class="tab-pane">
+                	<div class="span8 offset3">
+			          <h2>profile</h2>
+			          <hr>
+			  				<form class="form-horizontal ">
+				      
+				            <label >Class: </label>
+			            	<select id="select01">
+				                <option>Freshman</option>
+				                <option>Sophomore</option>
+				                <option>Junior</option>
+				                <option>Senior</option>
+			              	</select>
+			              	
+				   			<br>
+				   			<label>FAFSA Completed</label>
+				   			<label class="radio">
+							  <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked>
+							  Yes
+							</label>
+							<label class="radio">
+							  <input type="radio" name="optionsRadios" id="optionsRadios2" value="0">
+							  No
+							</label>	
+							<button type="submit" class="btn">Save</button>
+      					</form>	
+			        </div>
+             	</div>
+			</div>
+			
+	      	
+		</div>
+    	<hr class="span9 offset3">
+
+      <footer class="span9 offset3">
+        <p>&copy; YouAchieve 2012</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+  </body>
+</html>
